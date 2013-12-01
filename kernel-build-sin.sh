@@ -55,7 +55,7 @@ if [ "$3" == "clean" ] ; then
     #-------------------
     # Clean up the build
     #-------------------
-    ARCH=arm CROSS_COMPILE=../prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- make mrproper
+    ARCH=arm CROSS_COMPILE=../prebuilt/linux-x86/toolchain/arm-eabi-4.7/bin/arm-eabi- make mrproper
 fi
 
 if [ ! -e ".config" ] ; then
@@ -63,13 +63,13 @@ if [ ! -e ".config" ] ; then
     #---------------------------
     # kernel configuration setup
     #---------------------------
-    ARCH=arm CROSS_COMPILE=../prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- make $PRODUCT_DEFCNFG
+    ARCH=arm CROSS_COMPILE=../prebuilt/linux-x86/toolchain/arm-eabi-4.7/bin/arm-eabi- make $PRODUCT_DEFCNFG
 fi
 
 #------
 # Build
 #------
-ARCH=arm CROSS_COMPILE=../prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- make -j$JOBS
+ARCH=arm CROSS_COMPILE=../prebuilt/linux-x86/toolchain/arm-eabi-4.7/bin/arm-eabi- make -j$JOBS
 
 if [ $? -ne 0 ] ; then
     echo "Build error - skip signing"
