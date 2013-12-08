@@ -18,34 +18,54 @@
 static struct cpufreq_frequency_table db8500_freq_table[] = {
 	[0] = {
 		.index = 0,
-		.frequency = 200000,
+		.frequency = 100000,
 	},
 	[1] = {
 		.index = 1,
-		.frequency = 400000,
+		.frequency = 200000,
 	},
 	[2] = {
 		.index = 2,
-		.frequency = 600000,
+		.frequency = 300000,
 	},
 	[3] = {
-		.index = 3,
-		.frequency = 800000,
+		.index=3,
+		.frequency = 400000,
 	},
 	[4] = {
-		.index = 4,
-		.frequency = 1000000,
+		.index=4,
+		.frequency = 500000,
 	},
 	[5] = {
-		.index = 5,
-		.frequency = CPUFREQ_TABLE_END,
+		.index=5,
+		.frequency = 600000,
 	},
 	[6] = {
-		.index = 6,
-		.frequency = CPUFREQ_TABLE_END,
+		.index=6,
+		.frequency = 700000,
 	},
 	[7] = {
-		.index = 7,
+		.index=7,
+		.frequency = 800000,
+	},
+	[8] = {
+		.index=8,
+		.frequency = 900000,
+	},
+	[9] = {
+		.index=9,
+		.frequency = 1000000,
+	},
+	[10] = {
+		.index=10,
+		.frequency = CPUFREQ_TABLE_END,
+	},
+	[11] = {
+		.index=11,
+		.frequency = CPUFREQ_TABLE_END,
+	},
+	[12] = {
+		.index = 12,
 		.frequency = CPUFREQ_TABLE_END,
 	},
 };
@@ -74,10 +94,15 @@ static int freq_table_len;
 
 static enum arm_opp db8500_idx2opp[] = {
 	ARM_EXTCLK,
-	ARM_50_OPP,	
+	ARM_EXTCLK,
+	ARM_50_OPP,
+	ARM_50_OPP,
 	ARM_100_OPP,
 	ARM_100_OPP,
-	ARM_MAX_OPP,	
+	ARM_100_OPP,
+	ARM_100_OPP,
+	ARM_MAX_OPP,
+	ARM_MAX_OPP,
 	ARM_MAX_OPP,
 	ARM_MAX_OPP
 };
